@@ -193,21 +193,25 @@
         }
         
         .cta-button {
-            display: inline-block;
-            background: #ffd700;
-            color: #1a1a1a;
-            padding: 18px 40px;
-            font-size: 1.3em;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: transform 0.2s;
-        }
-        
-        .cta-button:hover {
-            transform: scale(1.05);
-            background: #ffed4e;
-        }
+  display: inline-block;
+  background: linear-gradient(135deg, #ffd700 0%, #000000 100%);
+  color: #1a1a1a; /* dark text for contrast on gold */
+  padding: 18px 40px;
+  font-size: 1.3em;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+/* Hover effect */
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+  filter: brightness(1.1);
+}
         
         @media (max-width: 768px) {
             h1 {
