@@ -232,51 +232,58 @@
                 gap: 15px;
             }
         }
-        /* Desktop = show embed, hide mobile link */
-.desktop-calendar-btn {
-    display: block;
-}
-.mobile-calendar-btn {
-    display: none;
+       /* Popup overlay */
+.schedule-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
 }
 
-/* Mobile = hide embed, show mobile link */
-@media (max-width: 768px) {
-    .desktop-calendar-btn {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0 !important;
-        overflow: hidden !important;
-    }
-
-    .mobile-calendar-btn {
-        display: block;
-        margin-top: 25px;
-        text-align: center;
-    }
-
-    .mobile-calendar-btn a {
-        display: inline-block;
-        padding: 16px 30px;
-        background: #ffd700;
-        color: #1a1a1a;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 1.2em;
-    }
+/* Popup inner content */
+.popup-content {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  height: 80%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  animation: popupFade 0.3s ease-out;
 }
-       @media (max-width: 768px) {
-    .SchedulingButton,
-    .SchedulingButton * {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0 !important;
-        overflow: hidden !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-} 
+
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+}
+
+/* Popup iframe */
+.popup-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Animation */
+@keyframes popupFade {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
     </style>
 </head>
 <body>
@@ -324,56 +331,45 @@
         
         <div class="cta-box">
     <h2>Ready to Stop Losing Leads?</h2>
-    <p>Let's build you a lead-capture system that actually works.</p>
+    <p>Let's build you a lead-capture system that actually works.</<div class="cta-box">
+  <h2>Ready to Stop Losing Leads?</h2>
+  <p>Let's build you a lead-capture system that actually works.</p>
 
-   <!-- DESKTOP VERSION (Google scheduling button) -->
-<div class="desktop-calendar-btn" id="calendar-btn"></div>
-
-<!-- MOBILE VERSION (simple link opening calendar directly) -->
-<div class="mobile-calendar-btn">
-    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3MASMLI8-vcRoS8OHWrgAbath1U1N82KyrRJqwfY9eK8_B5RddJPvIXSIFsxlQ-Hqju7GIq-NF?gv=true" target="_blank">
-        Book an Appointment
-    </a>
+  <!-- Button triggers popup -->
+  <a href="#" class="cta-button custom-scheduling-btn" id="open-schedule">Book an Appointment</a>
 </div>
 
-<!-- Google Calendar Appointment Scheduling -->
-<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-<script>
-(function() {
-  var target = document.getElementById('calendar-btn');
-  window.addEventListener('load', function() {
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3MASMLI8-vcRoS8OHWrgAbath1U1N82KyrRJqwfY9eK8_B5RddJPvIXSIFsxlQ-Hqju7GIq-NF?gv=true',
-      color: '#039BE5',
-      label: 'Book an appointment',
-      target: target,
-    });
-  });
-})();
-</script>
-    <!-- end Google Calendar Appointment Scheduling -->
+<!-- Popup overlay -->
+<div id="schedule-popup" class="schedule-popup">
+  <div class="popup-content">
+    <span id="close-popup" class="popup-close">&times;</span>
+    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3MASMLI8-vcRoS8OHWrgAbath1U1N82KyrRJqwfY9eK8_B5RddJPvIXSIFsxlQ-Hqju7GIq-NF?gv=true" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
-
-    </div>
     <script>
   (function(e,a,d,i,c,t=a.createElement(d)){e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},t.src=i,t.async=1,a.body.insertAdjacentElement("beforeend",t)})(window,document,"script","https://widget.quickchat.ai/chat.js","_quickchat");
   _quickchat("host", "app.quickchat.ai");
   _quickchat("init", "iehze2y9mk");
 </script>
-    <script>
-  function hideSchedulingBtnOnMobile() {
-    if (window.innerWidth <= 768) {
-      // Try to find the injected calendar button and remove it
-      const btn = document.querySelector('gc-appointment-scheduling-button, .SchedulingButton, .schedule-button, [data-gc-scheduling]');
-      if (btn) {
-        btn.remove();
-      }
-    }
-  }
+   <script>
+  const openBtn = document.getElementById('open-schedule');
+  const popup = document.getElementById('schedule-popup');
+  const closeBtn = document.getElementById('close-popup');
 
-  window.addEventListener('load', hideSchedulingBtnOnMobile);
-  window.addEventListener('resize', hideSchedulingBtnOnMobile);
+  openBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    popup.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', function() {
+    popup.style.display = 'none';
+  });
+
+  window.addEventListener('click', function(e) {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
 </script>
-</body>
+        </body>  
 </html>
