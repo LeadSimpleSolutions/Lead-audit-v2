@@ -232,6 +232,35 @@
                 gap: 15px;
             }
         }
+        /* Desktop = show embed, hide mobile link */
+.desktop-calendar-btn {
+    display: block;
+}
+.mobile-calendar-btn {
+    display: none;
+}
+
+/* Mobile = hide embed, show mobile link */
+@media (max-width: 768px) {
+    .desktop-calendar-btn {
+        display: none;
+    }
+    .mobile-calendar-btn {
+        display: block;
+        margin-top: 25px;
+        text-align: center;
+    }
+    .mobile-calendar-btn a {
+        display: inline-block;
+        padding: 16px 30px;
+        background: #ffd700;
+        color: #1a1a1a;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+}
     </style>
 </head>
 <body>
@@ -281,25 +310,32 @@
     <h2>Ready to Stop Losing Leads?</h2>
     <p>Let's build you a lead-capture system that actually works.</p>
 
-    <!-- This is where the Google button will load -->
-    <div id="calendar-btn"></div>
+   <!-- DESKTOP VERSION (Google scheduling button) -->
+<div class="desktop-calendar-btn" id="calendar-btn"></div>
 
-    <!-- Google Calendar Appointment Scheduling begin -->
-    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-    <script>
-    (function() {
-      var target = document.getElementById('calendar-btn');
-      window.addEventListener('load', function() {
-        calendar.schedulingButton.load({
-          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3MASMLI8-vcRoS8OHWrgAbath1U1N82KyrRJqwfY9eK8_B5RddJPvIXSIFsxlQ-Hqju7GIq-NF?gv=true',
-          color: '#039BE5',
-          label: 'Book an appointment',
-          target: target,
-        });
-      });
-    })();
-    </script>
+<!-- MOBILE VERSION (simple link opening calendar directly) -->
+<div class="mobile-calendar-btn">
+    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3MASMLI8-vcRoS8OHWrgAbath1U1N82KyrRJqwfY9eK8_B5RddJPvIXSIFsxlQ-Hqju7GIq-NF?gv=true" target="_blank">
+        Book an Appointment
+    </a>
+</div>
+
+<!-- Google Calendar Appointment Scheduling -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.getElementById('calendar-btn');
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3MASMLI8-vcRoS8OHWrgAbath1U1N82KyrRJqwfY9eK8_B5RddJPvIXSIFsxlQ-Hqju7GIq-NF?gv=true',
+      color: '#039BE5',
+      label: 'Book an appointment',
+      target: target,
+    });
+  });
+})();
+</script>
     <!-- end Google Calendar Appointment Scheduling -->
 </div>
 
