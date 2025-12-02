@@ -243,13 +243,18 @@
 /* Mobile = hide embed, show mobile link */
 @media (max-width: 768px) {
     .desktop-calendar-btn {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        overflow: hidden !important;
     }
+
     .mobile-calendar-btn {
         display: block;
         margin-top: 25px;
         text-align: center;
     }
+
     .mobile-calendar-btn a {
         display: inline-block;
         padding: 16px 30px;
