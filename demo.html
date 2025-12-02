@@ -361,5 +361,19 @@
   _quickchat("host", "app.quickchat.ai");
   _quickchat("init", "iehze2y9mk");
 </script>
+    <script>
+  function hideSchedulingBtnOnMobile() {
+    if (window.innerWidth <= 768) {
+      // Try to find the injected calendar button and remove it
+      const btn = document.querySelector('gc-appointment-scheduling-button, .SchedulingButton, .schedule-button, [data-gc-scheduling]');
+      if (btn) {
+        btn.remove();
+      }
+    }
+  }
+
+  window.addEventListener('load', hideSchedulingBtnOnMobile);
+  window.addEventListener('resize', hideSchedulingBtnOnMobile);
+</script>
 </body>
 </html>
