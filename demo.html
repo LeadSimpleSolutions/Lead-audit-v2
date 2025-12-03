@@ -194,30 +194,50 @@
         
         .cta-button {
   display: inline-block;
-   background: linear-gradient(
-  180deg,
-  rgba(255, 215, 0, 0.25) 0%,     /* soft gold */
-  #e6c200 40%,                    /* richer gold */
-  #ffd700 60%,                    /* bright gold */
-  #1a1a1a 100%                    /* dark base */
-) !important;
-  color: #1a1a1a; /* dark text for contrast on gold */
+
+  /* Gold centered — dark on top, bottom, AND sides */
+  background: radial-gradient(
+      circle at center,
+      #ffd700 0%,
+      #e6c200 35%,
+      #1a1a1a 100%
+    ),
+    linear-gradient(
+      180deg,
+      #1a1a1a 0%,
+      #e6c200 45%,
+      #ffd700 60%,
+      #e6c200 75%,
+      #1a1a1a 100%
+    ) !important;
+
+  background-blend-mode: overlay;
+
+  color: #1a1a1a;
   padding: 18px 40px;
   font-size: 1.3em;
   font-weight: 700;
   text-decoration: none;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+  /* Dark side shading */
+  box-shadow:
+    inset 6px 0 20px rgba(0,0,0,0.55),    /* left dark fade */
+    inset -6px 0 20px rgba(0,0,0,0.55),   /* right dark fade */
+    0 6px 14px rgba(0,0,0,0.45);          /* outer shadow */
+
   transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
 }
 
-/* Hover effect */
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
-  filter: brightness(1.1);
+  transform: translateY(-3px);
+  box-shadow:
+    inset 6px 0 15px rgba(0,0,0,0.45),
+    inset -6px 0 15px rgba(0,0,0,0.45),
+    0 10px 20px rgba(0,0,0,0.55);
 }
+
         
         @media (max-width: 768px) {
             h1 {
