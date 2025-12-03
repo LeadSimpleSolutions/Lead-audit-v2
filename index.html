@@ -210,22 +210,28 @@
         }
         
         .cta-button {
-            display: inline-block;
-            background: #ffd700;
-            color: #1a1a1a;
-            padding: 18px 40px;
-            font-size: 1.3em;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 20px;
-            transition: transform 0.2s;
-        }
-        
-        .cta-button:hover {
-            transform: scale(1.05);
-            background: #ffed4e;
-        }
+  display: inline-block;
+  padding: 18px 40px;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 10px;
+  background: #ffd700 !important;
+  box-shadow: 0 8px 20px #ba9e06;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.65);
+}
+
+.cta-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.50);
+}
         
         .stat {
             font-size: 1.1em;
