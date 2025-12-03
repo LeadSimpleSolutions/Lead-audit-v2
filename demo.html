@@ -201,19 +201,18 @@
   text-decoration: none;
   border-radius: 10px;
 
-  /* GOLD CENTER → OVAL SHAPE → BLACK EDGES */
+  /* BIGGER OVAL & SUPER SMOOTH TRANSITION */
   background: radial-gradient(
     ellipse at center,
-    #ffd700 0%,        /* bright gold core */
-    #e6c200 15%,       /* gold halo (smaller) */
-    #a48300 35%,       /* deeper gold transition */
-    #4a4100 55%,       /* darker gold */
-    #1a1a1a 100%       /* full black edges */
+    #ffd700 0%,        /* bright gold center */
+    #f0c400 20%,       /* soft gold expansion */
+    #d4aa00 40%,       /* medium gold */
+    #8f7500 60%,       /* darker gold (smooth mid blend) */
+    #3a3200 80%,       /* very dark gold fade */
+    #1a1a1a 100%       /* black edges */
   ) !important;
 
-  /* Soft realistic shadow */
   box-shadow: 0 8px 20px rgba(0,0,0,0.55);
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
