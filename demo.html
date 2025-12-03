@@ -197,42 +197,37 @@
   padding: 18px 40px;
   font-size: 1.3em;
   font-weight: 700;
+  color: #1a1a1a;
   text-decoration: none;
-  text-align: center;
-  color: #1a1a1a;          /* dark text for contrast on gold */
-  border: none;
-  border-radius: 6px;
+  border-radius: 8px;
 
-  /* Gradient background: lighter gold top → darker gold middle → dark base */
-  background: linear-gradient(
-    to bottom,
-    #ffd700 0%,       /* bright gold at top */
-    #e6c200 45%,      /* richer gold mid */
-    #b38f00 60%,      /* deeper gold / bronze-ish */
-    #1a1a1a 100%      /* dark base at bottom */
-  );
+  /* Circular gradient: gold center → black edges */
+  background: radial-gradient(
+    circle at center,
+    #ffd700 0%,      /* bright gold center */
+    #e6c200 35%,     /* rich warm gold ring */
+    #8f7a00 55%,     /* deep gold transitioning */
+    #1a1a1a 100%     /* fully blended dark edges */
+  ) !important;
 
-  /* 3D “depth + lift” shadows for raised look */
+  /* Soft shadow to make it look real and raised */
   box-shadow:
-    0 4px 0 #8a6c00,                   /* dark base “edge” under button */
-    0 8px 12px rgba(0, 0, 0, 0.4);     /* soft drop shadow for realism */
+    0 6px 14px rgba(0,0,0,0.45);
 
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow:
-    0 6px 0 #8a6c00,
-    0 12px 16px rgba(0, 0, 0, 0.45);
+    0 10px 20px rgba(0,0,0,0.55);
 }
 
 .cta-button:active {
-  transform: translateY(2px);
+  transform: translateY(1px);
   box-shadow:
-    0 2px 0 #8a6c00,
-    0 4px 6px rgba(0, 0, 0, 0.4);
+    0 4px 10px rgba(0,0,0,0.45);
 }
 
         @media (max-width: 768px) {
