@@ -195,23 +195,13 @@
         .cta-button {
   display: inline-block;
 
-  /* Gold centered — dark on top, bottom, AND sides */
+  /* Perfect circular gold glow */
   background: radial-gradient(
-      circle at center,
-      #ffd700 0%,
-      #e6c200 35%,
-      #1a1a1a 100%
-    ),
-    linear-gradient(
-      180deg,
-      #1a1a1a 0%,
-      #e6c200 45%,
-      #ffd700 60%,
-      #e6c200 75%,
-      #1a1a1a 100%
-    ) !important;
-
-  background-blend-mode: overlay;
+    circle at center,
+    #ffd700 0%,       /* bright gold center */
+    #e6c200 35%,      /* softer gold ring */
+    #1a1a1a 100%      /* smooth fade to dark edges */
+  ) !important;
 
   color: #1a1a1a;
   padding: 18px 40px;
@@ -221,11 +211,11 @@
   border-radius: 8px;
   text-align: center;
 
-  /* Dark side shading */
+  /* Slight, controlled side shading — not too dark */
   box-shadow:
-    inset 6px 0 20px rgba(0,0,0,0.55),    /* left dark fade */
-    inset -6px 0 20px rgba(0,0,0,0.55),   /* right dark fade */
-    0 6px 14px rgba(0,0,0,0.45);          /* outer shadow */
+    inset 2px 2px 6px rgba(0,0,0,0.35),
+    inset -2px -2px 6px rgba(0,0,0,0.35),
+    0 6px 14px rgba(0,0,0,0.45);
 
   transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
 }
@@ -233,9 +223,9 @@
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow:
-    inset 6px 0 15px rgba(0,0,0,0.45),
-    inset -6px 0 15px rgba(0,0,0,0.45),
-    0 10px 20px rgba(0,0,0,0.55);
+    inset 2px 2px 5px rgba(0,0,0,0.25),
+    inset -2px -2px 5px rgba(0,0,0,0.25),
+    0 10px 18px rgba(0,0,0,0.55);
 }
 
         
