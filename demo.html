@@ -201,18 +201,18 @@
   text-decoration: none;
   border-radius: 10px;
 
-  /* PROFESSIONAL CENTER RADIATION EFFECT */
+  /* ULTRA-SMOOTH GOLD → BLACK RADIATION */
   background: radial-gradient(
     circle at center,
-    #ffd700 0%,        /* pure gold center */
-    #e6c200 30%,       /* rich gold halo */
-    #5c4a00 55%,       /* darker, deeper gold (smooth transition) */
-    #1a1a1a 100%       /* full black at all edges */
+    #ffd700 0%,        /* bright gold center */
+    #e6c200 20%,       /* gold halo */
+    #a48300 40%,       /* deeper gold to soften transition */
+    #4a4100 60%,       /* darkened gold (smooth fade) */
+    #1a1a1a 100%       /* strong black on all edges */
   ) !important;
 
-  /* Soft but premium shadow */
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.45);
+  /* Clean soft shadow */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.55);
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
@@ -220,16 +220,13 @@
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow:
-    0 10px 20px rgba(0,0,0,0.55);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.65);
 }
 
 .cta-button:active {
   transform: translateY(1px);
-  box-shadow:
-    0 4px 10px rgba(0,0,0,0.45);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.50);
 }
-
 
         @media (max-width: 768px) {
             h1 {
