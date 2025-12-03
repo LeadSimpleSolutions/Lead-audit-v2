@@ -201,15 +201,14 @@
   text-decoration: none;
   border-radius: 10px;
 
-  /* BIGGER OVAL & SUPER SMOOTH TRANSITION */
   background: radial-gradient(
     ellipse at center,
     #ffd700 0%,        /* bright gold center */
-    #f0c400 20%,       /* soft gold expansion */
-    #d4aa00 40%,       /* medium gold */
-    #8f7500 60%,       /* darker gold (smooth mid blend) */
-    #3a3200 80%,       /* very dark gold fade */
-    #1a1a1a 100%       /* black edges */
+    #f0c400 15%,       /* soft gold halo (smaller) */
+    #d4aa00 32%,       /* mid gold */
+    #8f7500 52%,       /* deeper gold */
+    #3a3200 75%,       /* very dark gold fade */
+    #1a1a1a 100%       /* clean black edges */
   ) !important;
 
   box-shadow: 0 8px 20px rgba(0,0,0,0.55);
@@ -226,6 +225,7 @@
   transform: translateY(1px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.50);
 }
+
 
 
         @media (max-width: 768px) {
