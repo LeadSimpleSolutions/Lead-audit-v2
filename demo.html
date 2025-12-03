@@ -192,7 +192,7 @@
             margin-bottom: 30px;
         }
         
-        .cta-button {
+.cta-button {
   display: inline-block;
   padding: 18px 40px;
   font-size: 1.3em;
@@ -201,17 +201,17 @@
   text-decoration: none;
   border-radius: 10px;
 
-  /* ULTRA-SMOOTH GOLD → BLACK RADIATION */
+  /* GOLD CENTER → OVAL SHAPE → BLACK EDGES */
   background: radial-gradient(
-    circle at center,
-    #ffd700 0%,        /* bright gold center */
-    #e6c200 20%,       /* gold halo */
-    #a48300 40%,       /* deeper gold to soften transition */
-    #4a4100 60%,       /* darkened gold (smooth fade) */
-    #1a1a1a 100%       /* strong black on all edges */
+    ellipse at center,
+    #ffd700 0%,        /* bright gold core */
+    #e6c200 15%,       /* gold halo (smaller) */
+    #a48300 35%,       /* deeper gold transition */
+    #4a4100 55%,       /* darker gold */
+    #1a1a1a 100%       /* full black edges */
   ) !important;
 
-  /* Clean soft shadow */
+  /* Soft realistic shadow */
   box-shadow: 0 8px 20px rgba(0,0,0,0.55);
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -227,6 +227,7 @@
   transform: translateY(1px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.50);
 }
+
 
         @media (max-width: 768px) {
             h1 {
