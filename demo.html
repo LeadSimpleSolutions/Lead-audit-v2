@@ -199,18 +199,18 @@
   font-weight: 700;
   color: #1a1a1a;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
 
-  /* Circular gradient: gold center → black edges */
+  /* PROFESSIONAL CENTER RADIATION EFFECT */
   background: radial-gradient(
     circle at center,
-    #ffd700 0%,      /* bright gold center */
-    #e6c200 35%,     /* rich warm gold ring */
-    #8f7a00 55%,     /* deep gold transitioning */
-    #1a1a1a 100%     /* fully blended dark edges */
+    #ffd700 0%,        /* pure gold center */
+    #e6c200 30%,       /* rich gold halo */
+    #5c4a00 55%,       /* darker, deeper gold (smooth transition) */
+    #1a1a1a 100%       /* full black at all edges */
   ) !important;
 
-  /* Soft shadow to make it look real and raised */
+  /* Soft but premium shadow */
   box-shadow:
     0 6px 14px rgba(0,0,0,0.45);
 
@@ -229,6 +229,7 @@
   box-shadow:
     0 4px 10px rgba(0,0,0,0.45);
 }
+
 
         @media (max-width: 768px) {
             h1 {
