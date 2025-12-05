@@ -247,11 +247,12 @@
             header h1 {
                 font-size: 1.6em;
             }
-    header p {
-        transform: translate (-50%, -50%);
+    {
         text-align: center;
-        padding-left: 10px;
-        padding-right: 18px;
+        margin: 15px auto 0; /* auto handles left/right centering */
+        padding: 0;           /* remove any leftover padding */
+        display: block;
+        max-width: 100%;
     }
             .branding {
                 position: static;
