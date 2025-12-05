@@ -244,20 +244,20 @@
         }
         
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.6em;
-            }
-    {
-        text-align: center;
-        margin: 15px auto 0; /* auto handles left/right centering */
-        padding: 0;           /* remove any leftover padding */
-        display: block;
-        max-width: 100%;
+            header p {
+        position: static;       /* put it back into normal flow */
+        display: block;         
+        max-width: 100%;        
+        margin: 10px auto 0;    /* centers it horizontally */
+        text-align: center;     
+        padding: 0 10px;        /* optional: prevent hugging edges */
     }
-            .branding {
-                position: static;
-                margin-bottom: 30px;
-            }
+
+    .branding {
+        position: static;       /* make logo stack above text */
+        margin: 0 auto 20px;    
+        text-align: center;     
+        }
             
             .logo-placeholder {
                 width: 60px;
