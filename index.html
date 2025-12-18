@@ -290,7 +290,7 @@
                 <div class="logo-placeholder"><img src="assets/logo.png" alt="Lead Simple Solutions logo"></div>
                 <div class="business-name">Lead Simple Solutions</div>
             </div>
-            <h1>Your Lead Audit</h1>
+            <h1>Lead Audit For <span id="business-name">Your Business</span></h1>
             <!-- UPDATED -->
             <p>Based on national plumbing industry data and average U.S. search behavior</p>
         </header>
@@ -335,7 +335,7 @@
                 <!-- UPDATED ITEMS -->
                 <li><strong>No website or poor online visibility</strong> — Over half of all plumbing searches happen on mobile. If you’re not on Google, you’re invisible.</li>
                 <li><strong>No contact form or lead capture</strong> — 40% of customers prefer submitting a form instead of calling.</li>
-                <li><strongNo clear call-to-action</strong> — Homeowners won’t hunt for your number. If it’s not obvious, they bounce.</li>
+                <li><strong></strong>No clear call-to-action</strong> — Homeowners won’t hunt for your number. If it’s not obvious, they bounce.</li>
                 <li><strong>No automated responses</strong> — Leads expect a reply within 5 minutes. If they don’t hear back, they call another plumber.</li>
                 <li><strong>No after-hours capture</strong> — 35–55% of plumbing inquiries happen on nights/weekends. If no one catches them, the jobs are gone.</li>
                 <li><strong>No FAQ or quick-answer system</strong> — People leave when they can’t quickly confirm you provide the service they need.</li>
@@ -430,6 +430,12 @@
         These sources were used to calculate realistic lead volumes, conversion rates, and revenue impacts for plumbing businesses nationwide.
     </p>
 </div>
+<script>
+    const business = new URLSearchParams(location.search).get('business');
 
+if (business) {
+  document.getElementById('business-name').textContent = business;
+}
+</script>
 </body>
 </html>
